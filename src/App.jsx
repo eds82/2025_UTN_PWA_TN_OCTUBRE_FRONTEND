@@ -3,6 +3,8 @@ import { Route, Routes } from 'react-router'
 import RegisterScreen from './Screens/RegisterScreen/RegisterScreen'
 import LoginScreen from './Screens/LoginScreen/LoginScreen'
 import AuthMiddleware from './Middlewares/AuthMiddleware'
+import HomeScreen from './Screens/HomeScreen/HomeScreen'
+import CreateWorkspaceScreen from './Screens/CreateWorkspaceScreen/CreateWorkspaceScreen'
 
 
 function App() {
@@ -14,7 +16,8 @@ function App() {
       <Route path='/login' element={<LoginScreen/>} />
       <Route path='/register' element={<RegisterScreen/>} />
       <Route element={<AuthMiddleware/>}>       {/* Primero pasara por aca antes de por home */}
-        <Route path='/home' element={<h1>Home</h1>}/>
+        <Route path='/home' element={<HomeScreen/>}/>
+        <Route path='/workspace/new' element={<CreateWorkspaceScreen/>}/>
       </Route>
     </Routes>
 
